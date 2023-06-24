@@ -1,0 +1,18 @@
+services:
+    Asapo\DailyHub\SuluBundle\Admin\DailyHubAdmin:
+        tags:
+            - sulu.admin
+
+    Asapo\DailyHub\Chat\Application\ChatContext:
+        arguments:
+            - '@Asapo\DailyHub\Chat\Application\Adapter\AIPlatformAdapterInterface'
+
+    Asapo\DailyHub\Chat\Application\Adapter\AIPlatformAdapterInterface: '@Asapo\DailyHub\Chat\Infrastructure\AI\OpenAI\OpenAIPlatformAdapter'
+    Asapo\DailyHub\Chat\Infrastructure\AI\OpenAI\OpenAIPlatformAdapter:
+        arguments:
+            - '%env(OPEN_AI_KEY)%'
+
+    Asapo\DailyHub\SuluBundle\Controller\ChatController:
+        public: true
+        arguments:
+            - '@Asapo\DailyHub\Chat\Application\ChatContext'

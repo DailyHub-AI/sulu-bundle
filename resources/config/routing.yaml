@@ -1,0 +1,9 @@
+dailyhub_chat_get:
+    path:       /chat
+    controller: Asapo\DailyHub\SuluBundle\Controller\ChatController::getAction
+    methods:    GET
+
+dailyhub_chat_prompt:
+    path:       /chat
+    controller: Asapo\DailyHub\SuluBundle\Controller\ChatController::promptAction
+    methods:    POST

@@ -1,0 +1,28 @@
+{
+    "name": "dailyhub/sulu-bundle",
+    "type": "sulu-bundle",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Asapo\\DailyHub\\SuluBundle\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Johannes Wachter",
+            "email": "johannes@sulu.io"
+        }
+    ],
+    "require": {
+        "sulu/sulu": "^2.5",
+        "symfony/config": "^6.3",
+        "symfony/dependency-injection": "^6.3",
+        "symfony/http-foundation": "^6.3",
+        "symfony/http-kernel": "^6.3"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}
